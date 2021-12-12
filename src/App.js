@@ -8,17 +8,14 @@ function App() {
   const [todos, setTodos] = useState([])
 
   const handleClick = (id) => {
-    //console.log(id)
     setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
   }
   const handleDelete = (id) => {
-    //console.log(id)
     setTodos(todos.filter(todo => todo.id !== id ? todo : ""))
   }
   const addNewTodo = (text) => {
     const id = Math.floor(Math.random() * 100) + 1 
     const newTodo = {id, ...text}
-    
     setTodos([...todos, newTodo])
   }
 
