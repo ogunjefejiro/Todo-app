@@ -51,6 +51,7 @@ function App() {
   const getTodos = async () => {
     // create your Parse Query using the Person Class you've created
     const query = new Parse.Query("Todos");
+    query.descending("createdAt");
     // run the query
     const todo = await query.find();
     setParseTodos(todo);
